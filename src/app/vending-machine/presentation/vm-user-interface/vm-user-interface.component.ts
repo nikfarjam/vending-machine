@@ -32,7 +32,7 @@ export class VmUserInterfaceComponent implements OnInit {
     const cashValue = +cash;
     const cansValue = +cans;
     if (!isNaN(cansValue) && !isNaN(cashValue)) {
-      this.purchaseEvent.emit({cash: cansValue, cans: cansValue});
+      this.purchaseEvent.emit({cash: cashValue, cans: cansValue});
     }
   }
 
