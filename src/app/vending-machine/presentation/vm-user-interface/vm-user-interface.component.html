@@ -1,0 +1,22 @@
+<div class="vm-user-interface flex-container">
+    <div class="vm-user-interface--supply">
+        <span>Supply :</span>
+        <span>{{supply}}</span>
+    </div>
+
+    <div class="vm-user-interface--messages">
+        <span class="vm-user-interface--messages_error"></span>
+        <span class="vm-user-interface--messages_info"></span>
+    </div>
+
+    <div class="vm-user-interface--resupply">
+        <input name="new-supply" #newSupply type="number">
+        <button (click)="resupply(newSupply.value)" name="new-supply-btn">Resupply</button>
+    </div>
+
+    <div class="vm-user-interface--input">
+        <input name="cash" #cash>
+        <input name="number-of-cans" #cans type="number">
+        <button (click)="purchase(cash.value, cans.value)">Purchase</button>
+    </div>
+</div>
