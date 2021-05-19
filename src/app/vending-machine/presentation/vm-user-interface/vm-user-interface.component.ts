@@ -8,7 +8,9 @@ import { UserInput } from '../../model/user-input';
 })
 export class VmUserInterfaceComponent implements OnInit {
 
-  @Input() public supply = 0;
+  @Input() public supply: number | null = null;
+  @Input() public errorMessage: string | null = null;
+  @Input() public infoMessage: string | null = null;
   @Output() resupplyEvent = new EventEmitter<number>();
   @Output() purchaseEvent = new EventEmitter<UserInput>();
 
