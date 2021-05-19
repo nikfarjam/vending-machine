@@ -10,13 +10,21 @@
     </div>
 
     <div class="vm-user-interface--resupply">
+        <span>New Supply</span>
         <input name="new-supply" #newSupply type="number">
         <button (click)="resupply(newSupply.value)" name="new-supply-btn">Resupply</button>
     </div>
 
     <div class="vm-user-interface--input">
+        <span>Cash amount</span>
         <input name="cash" #cash>
+        <span>Number of cans</span>
         <input name="number-of-cans" #cans type="number">
         <button (click)="purchase(cash.value, cans.value)">Purchase</button>
+    </div>
+
+    <div class="vm-user-interface--result">
+        <span class="error" *ngIf="errorMessage">{{errorMessage}}</span>
+        <span class="info" *ngIf="infoMessage">{{infoMessage}}</span>
     </div>
 </div>
