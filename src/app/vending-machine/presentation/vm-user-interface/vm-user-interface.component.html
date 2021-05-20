@@ -1,7 +1,7 @@
 <div class="vm-user-interface flex-container">
     <div class="vm-user-interface--supply">
-        <span>Supply :</span>
-        <span>{{supply}}</span>
+        <span class="label">Supply :</span>
+        <span class="label">{{supply}}</span>
     </div>
 
     <div class="vm-user-interface--messages">
@@ -10,15 +10,15 @@
     </div>
 
     <div class="vm-user-interface--resupply">
-        <span>New Supply</span>
+        <span class="label">New Supply</span>
         <input name="new-supply" #newSupply type="number">
         <button (click)="resupply(newSupply.value)" name="new-supply-btn">Resupply</button>
     </div>
 
     <div class="vm-user-interface--input">
-        <span>Cash amount</span>
+        <span class="label">Cash amount</span>
         <input name="cash" #cash>
-        <span>Number of cans</span>
+        <span class="label">Number of cans</span>
         <input name="number-of-cans" #cans type="number">
         <button (click)="purchase(cash.value, cans.value)">Purchase</button>
     </div>
