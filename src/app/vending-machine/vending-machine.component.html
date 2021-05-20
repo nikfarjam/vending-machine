@@ -1,0 +1,3 @@
+<vm-user-interface (resupplyEvent)="resupply($event)" (purchaseEvent)="purchase($event)"
+    [supply]="supply$ | async" [errorMessage]="error$ | async" [infoMessage]="info$ | async">
+</vm-user-interface>

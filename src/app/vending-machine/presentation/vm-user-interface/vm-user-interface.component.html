@@ -1,0 +1,30 @@
+<div class="vm-user-interface flex-container">
+    <div class="vm-user-interface--supply">
+        <span class="label">Supply :</span>
+        <span class="label">{{supply}}</span>
+    </div>
+
+    <div class="vm-user-interface--messages">
+        <span class="vm-user-interface--messages_error"></span>
+        <span class="vm-user-interface--messages_info"></span>
+    </div>
+
+    <div class="vm-user-interface--resupply">
+        <span class="label">New Supply</span>
+        <input name="new-supply" #newSupply type="number">
+        <button (click)="resupply(newSupply.value)" name="new-supply-btn">Resupply</button>
+    </div>
+
+    <div class="vm-user-interface--input">
+        <span class="label">Cash amount</span>
+        <input name="cash" #cash>
+        <span class="label">Number of cans</span>
+        <input name="number-of-cans" #cans type="number">
+        <button (click)="purchase(cash.value, cans.value)">Purchase</button>
+    </div>
+
+    <div class="vm-user-interface--result">
+        <span class="error" *ngIf="errorMessage">{{errorMessage}}</span>
+        <span class="info" *ngIf="infoMessage">{{infoMessage}}</span>
+    </div>
+</div>
