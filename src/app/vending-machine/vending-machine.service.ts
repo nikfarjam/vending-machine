@@ -10,16 +10,12 @@ import { DEFAULT_COST, DEFAULT_SUPPLY, VMState } from './model/vending-machine-s
 export class VendingMachineService extends ComponentStore<VMState> {
 
   public readonly supply$: Observable<number> = this.select(state => state.supply);
-  public readonly returnCash$: Observable<number> = this.select(state => state.returnCash);
-  public readonly returnCans$: Observable<number> = this.select(state => state.returnCans);
   public readonly info$: Observable<string> = this.select(state => state.infoMessage);
   public readonly error$: Observable<string> = this.select(state => state.errorMessage);
 
   constructor() { 
     super({
       supply: DEFAULT_SUPPLY,
-      returnCash: 0,
-      returnCans: 0,
       errorMessage: '',
       infoMessage: ''
     })
@@ -28,7 +24,9 @@ export class VendingMachineService extends ComponentStore<VMState> {
   readonly updateSupply = this.updater((state: VMState, supply: number) => {
     return {
       ...state,
-      supply
+      supply,
+      errorMessage: '',
+      infoMessage: `Resupplied with ${supply} cans`
     }
   });
 
@@ -56,8 +54,6 @@ export class VendingMachineService extends ComponentStore<VMState> {
     return {
       ...state,
       supply,
-      returnCans,
-      returnCash,
       errorMessage,
       infoMessage
     }

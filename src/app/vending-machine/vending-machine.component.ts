@@ -12,8 +12,6 @@ export class VendingMachineComponent implements OnInit {
   public error$ = this.store.error$;
   public info$ = this.store.info$;
   public supply$ = this.store.supply$;
-  public returnCans$ = this.store.returnCans$;
-  public returnCash$ = this.store.returnCash$;
 
   constructor(private store: VendingMachineService) { }
 
